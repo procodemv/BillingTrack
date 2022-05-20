@@ -37,7 +37,7 @@
     </header>
 
 
-    <div class="container content-wrapper-public mt-2">
+    <div class="container mt-2">
         @yield('content')
     </div>
 
