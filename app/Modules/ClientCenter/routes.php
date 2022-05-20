@@ -12,10 +12,16 @@
 Route::middleware('web')->namespace('BT\Modules\ClientCenter\Controllers')
     ->prefix('client_center')->name('clientCenter.')->group(function () {
         Route::get('/', 'ClientCenterDashboardController@redirectToLogin');
-        Route::name('public.invoice.show')->get('invoice/{invoiceKey}', 'ClientCenterPublicInvoiceController@show');
+        Route::name('public.invoice.show')->get('invoice/{invoiceKey}', function($key){
+            return redirect()->away("https://clients.procode.mv/invoice/{$key}");
+        });
+        // Route::name('public.invoice.show')->get('invoice/{invoiceKey}', 'ClientCenterPublicInvoiceController@show');
         Route::name('public.invoice.pdf')->get('invoice/{invoiceKey}/pdf', 'ClientCenterPublicInvoiceController@pdf');
         Route::name('public.invoice.html')->get('invoice/{invoiceKey}/html', 'ClientCenterPublicInvoiceController@html');
-        Route::name('public.quote.show')->get('quote/{quoteKey}', 'ClientCenterPublicQuoteController@show');
+        Route::name('public.quote.show')->get('quote/{quoteKey}', function($key){
+            return redirect()->away("https://clients.procode.mv/quote/{$key}");
+        });
+        // Route::name('public.quote.show')->get('quote/{quoteKey}', 'ClientCenterPublicQuoteController@show');
         Route::name('public.quote.pdf')->get('quote/{quoteKey}/pdf', 'ClientCenterPublicQuoteController@pdf');
         Route::name('public.quote.html')->get('quote/{quoteKey}/html', 'ClientCenterPublicQuoteController@html');
         Route::name('public.quote.approve')->get('quote/{quoteKey}/approve', 'ClientCenterPublicQuoteController@approve');
