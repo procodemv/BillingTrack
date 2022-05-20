@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-Route::middleware('web')->domain(config('app.client_domain'))->namespace('BT\Modules\ClientCenter\Controllers')
+Route::middleware('web')->namespace('BT\Modules\ClientCenter\Controllers')
     ->prefix('client_center')->name('clientCenter.')->group(function () {
         Route::get('/', 'ClientCenterDashboardController@redirectToLogin');
         Route::name('public.invoice.show')->get('invoice/{invoiceKey}', 'ClientCenterPublicInvoiceController@show');
