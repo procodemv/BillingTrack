@@ -27,17 +27,17 @@
     <header class="navbar-{{ $headClass }} bg-{{ $headBackground }} border-bottom">
 
         <a href="{{ auth()->check() ? route('dashboard.index') : '#' }}" class="brand-link bg-{{ $headBackground }} border-bottom ">
-            <img src="/img/billingtrack_logo.svg" alt="BillingTrack Logo" class="brand-image img-circle elevation-3 img-sm"
-                 style="opacity: .8">
+            {{-- <img src="/img/billingtrack_logo.svg" alt="BillingTrack Logo" class="brand-image img-circle elevation-3 img-sm"
+                 style="opacity: .8"> --}}
             <span class="brand-text font-weight-light">{{ config('bt.headerTitleText', config('app.name','BillingTrack')) }}</span>
         </a>
 
-        @yield('header')
+        {{-- @yield('header') --}}
 
     </header>
 
 
-    <div class="content-wrapper content-wrapper-public mt-2">
+    <div class="container content-wrapper-public mt-2">
         @yield('content')
     </div>
 

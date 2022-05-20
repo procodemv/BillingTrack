@@ -34,7 +34,7 @@
 
     </nav>
 
-    <aside class="main-sidebar">
+    {{-- <aside class="main-sidebar">
 
         <section class="sidebar">
 
@@ -42,7 +42,7 @@
 
         </section>
 
-    </aside>
+    </aside> --}}
 
     <div class="content-wrapper">
         @yield('content')
