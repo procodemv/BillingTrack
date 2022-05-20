@@ -85,7 +85,7 @@
             <span class="info">{{ mb_strtoupper(trans('bt.invoice')) }} #</span>{{ $invoice->number }}<br>
             <span class="info">{{ mb_strtoupper(trans('bt.issued')) }}</span> {{ $invoice->formatted_created_at }}<br>
             <span class="info">{{ mb_strtoupper(trans('bt.due_date')) }}</span> {{ $invoice->formatted_due_at }}<br>
-            <span class="info">{{ mb_strtoupper(trans('bt.tin_number')) }}</span> {{ $quote->companyProfile->vat_number }}<br><br>
+            <span class="info">{{ mb_strtoupper(trans('bt.tin_number')) }}</span> {{ $invoice->companyProfile->vat_number }}<br><br>
             <span class="info">{{ mb_strtoupper(trans('bt.bill_to')) }}</span><br>{{ $invoice->client->name }}<br>
             @if ($invoice->client->address) {!! $invoice->client->formatted_address !!}<br>@endif
         </td>
