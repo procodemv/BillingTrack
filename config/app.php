@@ -9,6 +9,8 @@ return [
     //'key' => 'ReplaceThisWithYourOwnLicenseKey',
 
     'demo' => env('APP_DEMO', false),
+    
+    'client_domain' => env('CLIENT_DOMAIN', 'clients.procode.mv'),
 
     /**
      * Values below here are not required to be changed for BillingTrack to function.
