@@ -94,7 +94,7 @@
             {{ $invoice->companyProfile->company }}<br>
             {!! $invoice->companyProfile->formatted_address !!}<br>
             @if ($invoice->companyProfile->phone) {{ $invoice->companyProfile->phone }}<br>@endif
-            @if ($invoice->user->email) <a href="mailto:{{ $invoice->user->email }}">{{ $invoice->user->email }}</a>@endif
+            @if ($invoice->companyProfile->email) <a href="mailto:{{ $invoice->companyProfile->email }}">{{ $invoice->companyProfile->email }}</a>@endif
         </td>
     </tr>
 </table>
