@@ -358,6 +358,7 @@ return [
     'expense'                                 => 'Expense',
     'expenses'                                => 'Expenses',
     'expires'                                 => 'Expires',
+    'tin_number'                                 => 'TIN Number',
     'export_clients'                          => 'Export Clients',
     'export_data'                             => 'Export Data',
     'export_expenses'                         => 'Export Expenses',
