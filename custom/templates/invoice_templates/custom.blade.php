@@ -78,23 +78,23 @@
     </style>
 </head>
 <body>
-
 <table>
     <tr>
         <td style="width: 50%;" valign="top">
-            <h1>{{ mb_strtoupper(trans('bt.invoice')) }}</h1>
-            <span class="info">{{ mb_strtoupper(trans('bt.invoice')) }} #</span>{{ $invoice->number }}<br>
-            <span class="info">{{ mb_strtoupper(trans('bt.issued')) }}</span> {{ $invoice->formatted_created_at }}<br>
-            <span class="info">{{ mb_strtoupper(trans('bt.due_date')) }}</span> {{ $invoice->formatted_due_at }}<br><br>
-            <span class="info">{{ mb_strtoupper(trans('bt.bill_to')) }}</span><br>{{ $invoice->client->name }}<br>
-            @if ($invoice->client->address) {!! $invoice->client->formatted_address !!}<br>@endif
+            <h1>{{ mb_strtoupper(trans('bt.quote')) }}</h1>
+            <span class="info">{{ mb_strtoupper(trans('bt.quote')) }} #</span>{{ $quote->number }}<br>
+            <span class="info">{{ mb_strtoupper(trans('bt.issued')) }}</span> {{ $quote->formatted_created_at }}<br>
+            <span class="info">{{ mb_strtoupper(trans('bt.expires')) }}</span> {{ $quote->formatted_expires_at }}<br>
+            <span class="info">{{ mb_strtoupper(trans('bt.tin_number')) }}</span> {{ $quote->companyProfile->vat_number }}<br><br>
+            <span class="info">{{ mb_strtoupper(trans('bt.bill_to')) }}</span><br>{{ $quote->client->name }}<br>
+            @if ($quote->client->address) {!! $quote->client->formatted_address !!}<br>@endif
         </td>
         <td style="width: 50%; text-align: right;" valign="top">
-            {!! $invoice->companyProfile->logo() !!}<br>
-            {{ $invoice->companyProfile->company }}<br>
-            {!! $invoice->companyProfile->formatted_address !!}<br>
-            @if ($invoice->companyProfile->phone) {{ $invoice->companyProfile->phone }}<br>@endif
-            @if ($invoice->user->email) <a href="mailto:{{ $invoice->user->email }}">{{ $invoice->user->email }}</a>@endif
+            {!! $quote->companyProfile->logo(80) !!}<br>
+            {{ $quote->companyProfile->company }}<br>
+            {!! $quote->companyProfile->formatted_address !!}<br>
+            @if ($quote->companyProfile->phone) {{ $quote->companyProfile->phone }}<br>@endif
+            @if ($quote->companyProfile->email) <a href="mailto:{{ $quote->companyProfile->email }}">{{ $quote->companyProfile->email }}</a>@endif
         </td>
     </tr>
 </table>
